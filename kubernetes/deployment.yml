@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crudapi-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: crudapiweb
+  template:
+    metadata:
+      labels:
+        app: crudapiweb
+    spec:
+      containers:
+        - name: crudapiweb
+          image: vinothrlingam/crud-webapp:latest
+          imagePullPolicy: "Always"
